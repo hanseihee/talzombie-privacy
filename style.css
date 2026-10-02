@@ -1,0 +1,35 @@
+:root {
+  color-scheme: light dark;
+  --bg: #f4f5fa; --card: #ffffff; --text: #1e2235; --muted: #6e7390; --accent: #4b55c9;
+  --glow: #ffb23f; --line: rgba(30, 34, 53, 0.08); --night: #111326; --night-text: #eef0ff; --night-muted: #a0a6c8;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #111326; --card: #1b1e36; --text: #eef0ff; --muted: #a0a6c8; --accent: #9aa3ff; --line: rgba(238, 240, 255, 0.1); }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--bg); color: var(--text); line-height: 1.75;
+  font-family: ui-rounded, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Hiragino Maru Gothic ProN", "Malgun Gothic", sans-serif;
+  -webkit-text-size-adjust: 100%;
+}
+.hero { position: relative; overflow: hidden; background: var(--night); color: var(--night-text); text-align: center; padding: 56px 16px 40px; }
+.hero::before {
+  content: ""; position: absolute; left: 50%; top: -120px; width: 420px; height: 420px; transform: translateX(-50%);
+  background: radial-gradient(circle, rgba(255, 178, 63, 0.42), rgba(255, 178, 63, 0) 65%); pointer-events: none;
+}
+.hero .app-icon { position: relative; display: block; width: 84px; height: 84px; margin: 0 auto 14px; border-radius: 19px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35); }
+.hero h1 { position: relative; margin: 0 0 4px; font-size: 32px; font-weight: 800; letter-spacing: -0.01em; }
+.hero p { position: relative; margin: 0; color: var(--night-muted); font-size: 15px; }
+nav { position: relative; display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-top: 22px; }
+nav a { color: var(--night-text); background: rgba(238, 240, 255, 0.08); border-radius: 999px; padding: 7px 14px; font-size: 13px; text-decoration: none; }
+nav a:focus-visible, a:focus-visible { outline: 2px solid var(--glow); outline-offset: 2px; }
+main { max-width: 720px; margin: 0 auto; padding: 12px 16px 8px; }
+.card { background: var(--card); border-radius: 20px; padding: 26px 22px 18px; margin: 18px 0; }
+h2 { font-size: 21px; margin: 0 0 8px; letter-spacing: -0.01em; }
+h3 { font-size: 16px; margin: 22px 0 6px; }
+p, li { font-size: 15px; }
+ul, ol { padding-left: 20px; }
+.muted { color: var(--muted); font-size: 13px; }
+a { color: var(--accent); }
+.note { border-left: 3px solid var(--glow); padding: 2px 0 2px 12px; }
+footer { text-align: center; padding: 16px 16px 40px; color: var(--muted); font-size: 13px; }
